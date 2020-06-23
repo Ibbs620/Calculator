@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
         opPressed = false;
     }
     public void one_pressed(View view) {
-        view.playSoundEffect(SoundEffectConstants.CLICK);
         if(text.length() == 12) return;
         if(text == "0") text = "";
         if(equalPressed && !opPressed) {
