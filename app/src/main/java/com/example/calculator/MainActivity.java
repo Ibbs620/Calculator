@@ -11,6 +11,7 @@ import java.math.RoundingMode;
 import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
+
     private TextView showNumber;
     private String text = "0";
     private double num1 = 0;
@@ -29,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         showNumber.setText(text);
         dc.setRoundingMode(RoundingMode.HALF_UP);
     }
-
 
     public void zero_pressed(View view) {
         if (text.length() == 12) return;
@@ -228,14 +228,14 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
         }
-        if (num1 > 9.99999999999E+11) {
+        if (num1 > 9.99999999999E+11 || num1 < -9.99999999999E+11) {
             for (int i = text.length() - 1; i >= 0; i--) {
                 if (text.charAt(i) == 'E') {
                     text = text.substring(0, 11) + text.substring(i, text.length() - 1);
                     break;
                 }
             }
-        } else if (num1 > 10000000) {
+        } else if (num1 >= 10000000 || num1 <= -10000000) {
             text = dc.format(num1);
             StringBuilder text2 = new StringBuilder();
             for (int i = 0; i <= text.length() - 1; i++) {
