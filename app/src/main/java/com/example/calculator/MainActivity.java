@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String format_num(double num) { //Formats number in decimal or scientific notation based on size
-        String text;
+        String text; 
         if (num == 0) { //Prevents a bug where 0 is displayed in scientific notation
             text = "0";
         } else if (num >= 10000000 && num < 9.99999999999E11 || num <= -10000000 && num > -9.99999999999E11) { //Prevents numbers under 12 digits from being displayed as scientific notation
